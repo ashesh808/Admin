@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+h1.nice {
+    font-family: 'Lora', serif;
+}
+
+h3.nice {
+    font-family: 'Lobster', cursive;
+}
+
+footer{
+    background-color: blue;
+}

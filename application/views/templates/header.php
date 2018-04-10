@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>NewsWebsite</title>
+    <title>Admin</title>
     <link href="<?php echo base_url(); ?>img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!-- css -->
@@ -30,8 +30,12 @@
 
 </head>
 <body>
+
+<?php if (current_url() == base_url()): ?>
+
+<?php else: ?>
 <div id="wrapper">
     <?php $this->load->view('templates/top_navbar'); ?>
     <div id="page-wrapper">
-
+        <?php endif; ?>
 

@@ -1,5 +1,6 @@
 <?php
-class Pages extends CI_Controller {
+class Login extends CI_Controller
+{
 
     public function __construct()
     {
@@ -11,16 +12,10 @@ class Pages extends CI_Controller {
         $this->load->library('form_validation');
     }
 
-    public function index()
-    {
+    public function login(){
+
         $this->load->view('templates/header');
-        $this->load->view('pages/home');
-        $this->load->view('templates/footer');
-    }
-    public function about()
-    {
-        $this->load->view('templates/header');
-        $this->load->view('pages/about');
+        $this->load->view('dashboard/login');
         $this->load->view('templates/footer');
     }
 }

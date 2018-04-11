@@ -16,11 +16,6 @@
                                 <input id="password" name="password" class="form-control" placeholder="Password"
                                        type="password" value="">
                             </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember_me" type="checkbox">Remember Me
-                                </label>
-                            </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                         </fieldset>

@@ -6,6 +6,31 @@
     <title>Admin</title>
     <link href="<?php echo base_url(); ?>img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
+    <!-- js -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>includes/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>includes/js/script.js"></script>
+    <script src="<?php echo base_url(); ?>includes/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>includes/js/morris-data.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- DataTables Links (Leave these alone) -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link href="<?php echo base_url();?>vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/sb-admin-2.css" rel="stylesheet">
+    <script src="<?php echo base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="<?php echo base_url();?>js/sb-admin-2.js"></script>
+
     <!-- css -->
     <link href="<?php echo base_url(); ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
@@ -15,18 +40,8 @@
     <link href="<?php echo base_url(); ?>vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>includes/css/sb-admin-2.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>vendor/morrisjs/morris.css" rel="stylesheet">
-
-
-    <!-- js -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>includes/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>includes/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>includes/js/script.js"></script>
-    <script src="<?php echo base_url(); ?>includes/js/sb-admin-2.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/raphael/raphael.min.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/morrisjs/morris.min.js"></script>
-    <script src="<?php echo base_url(); ?>includes/js/morris-data.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/metisMenu/metisMenu.min.js"></script>
+    <link href="<?php echo base_url(); ?>vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
 </head>
 <body>

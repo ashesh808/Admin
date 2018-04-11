@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Login extends CI_Controller
 {
@@ -7,7 +8,6 @@ class Login extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->library('session');
         $this->load->helper('security');
         $this->load->helper('url');
         $this->load->helper('form');
@@ -21,6 +21,7 @@ class Login extends CI_Controller
         if (isset($_SESSION['user_logged_in'])) {
             redirect('home');
         } else {
+
             $this->load->view('templates/header');
             $this->load->view('dashboard/login');
             $this->load->view('templates/footer');
@@ -31,63 +32,55 @@ class Login extends CI_Controller
 
     public function login_process()
     {
-        $session_set_value = $this->session->all_userdata();
+        $data = array(
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password')
+        );
 
-        if (isset($session_set_value['remember_me']) && $session_set_value['remember_me'] == "1") {
-            redirect('home');
-        } else {
+        $result = $this->Login_Database->login($data);
 
-            $data = array(
-                'email' => $this->input->post('email'),
-                'password' => $this->input->post('password')
-            );
+        if ($result == TRUE) {
+            $user_email = $this->input->post('email');
+            $result = $this->Login_Database->read_information($user_email);
+            if ($result != false) {
+                $session_data = array(
+                    'id' => $result['id'],
+                    'name' => $result['username'],
+                    'email' => $result['email'],
+                    'password' => $result['password'],
+                    'type' => $result['type'],
 
-            $result = $this->Login_Database->login($data);
+                );
+                $_SESSION['user_logged_in'] = $session_data;
+                /*
+                 if ($_SESSION['user_logged_in']['type'] == 1) {
+                     redirect('');
+                 } elseif ($_SESSION['user_logged_in']['type'] == 2) {
+                     redirect('');
 
-            if ($result == TRUE) {
-                $user_email = $this->input->post('email');
-                $remember = $this->input->post('remember_me');
-                if ($remember) {
-                    $this->session->set_userdata('remember_me', TRUE);
-                }
-                $result = $this->Login_Database->read_information($user_email);
-                if ($result != false) {
-                    $session_data = array(
-                        'id' => $result['id'],
-                        'name' => $result['username'],
-                        'email' => $result['email'],
-                        'password' => $result['password'],
-                        'type' => $result['type'],
+                 } elseif ($_SESSION['user_logged_in']['type'] == 3) {
+                     redirect('');
 
-                    );
-                    $_SESSION['user_logged_in'] = $session_data;
+                 } elseif ($_SESSION['user_logged_in']['type'] == 4) {
+                     redirect('');
 
-                    if ($_SESSION['user_logged_in']['type'] == 1) {
-                        redirect('');
-                    } elseif ($_SESSION['user_logged_in']['type'] == 2) {
-                        redirect('');
+                 } elseif ($_SESSION['user_logged_in']['type'] == 5) {
+                     redirect('home');
+                 }
+                */
 
-                    } elseif ($_SESSION['user_logged_in']['type'] == 3) {
-                        redirect('');
+                redirect('home');
 
-                    } elseif ($_SESSION['user_logged_in']['type'] == 4) {
-                        redirect('');
-
-                    } elseif ($_SESSION['user_logged_in']['type'] == 5) {
-                        redirect('home');
-                    }
-
-                }
-            } else {
-                redirect('');
             }
-
+        } else {
+            redirect('');
         }
+
     }
 
     public function logout()
     {
-        $this->session->sess_destroy();
+        session_destroy();
         redirect('');
 
     }
